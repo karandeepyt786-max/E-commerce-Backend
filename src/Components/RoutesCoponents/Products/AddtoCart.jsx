@@ -13,7 +13,7 @@ const Cart = (props) => {
 
   const sendingData = async () => {
     try {
-      const CartSending = await axios.patch("http://localhost:3000/user/Cart", {}, { withCredentials: true })
+      const CartSending = await axios.patch("https://e-commerce-backend1-4xl3.onrender.com/user/Cart", {}, { withCredentials: true })
       console.log("CartSending is ", CartSending.data)
       setNowwork(Nowwork)
     }
@@ -41,7 +41,7 @@ const Cart = (props) => {
 
 
     try {
-      const CartSending = await axios.patch("http://localhost:3000/user/Cart",
+      const CartSending = await axios.patch("https://e-commerce-backend1-4xl3.onrender.com/user/Cart",
         {
 
           Email: props.Email,
@@ -72,7 +72,7 @@ const Cart = (props) => {
           <div className="Box2 text-gray-400">Buy <span className='font-bold text-black'>$122.35</span> more and get <span className='font-bold text-black'>free shipping</span></div>
          
           <div className="Box3 flex mt-8 mb-10 flex-wrap justify-center gap-6">
-            <div className="ImageBox"><img src={props.ProductImage?.startsWith('http') ? props.ProductImage : 'http://localhost:3000/Products/' + props.ProductImage} className='w-[200px] h-[150px]' alt="" srcset="" /></div>
+            <div className="ImageBox"><img src={props.ProductImage?.startsWith('http') ? props.ProductImage : 'https://e-commerce-backend1-4xl3.onrender.com/Products/' + props.ProductImage} className='w-[200px] h-[150px]' alt="" srcset="" /></div>
             <div className="DetailsBox pl-3 flex flex-col gap-1">
               <div className="Name font-bold volkhov">{props.ProductBrand
               }</div>

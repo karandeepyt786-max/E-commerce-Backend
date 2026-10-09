@@ -15,7 +15,7 @@ const Products = () => {
   const GetProduct=async()=>{
 try {
     const response = await axios.get(
-      `http://localhost:3000/Admin/GetOneProduct/${id}`,
+      `https://e-commerce-backend1-4xl3.onrender.com/Admin/GetOneProduct/${id}`,
 { withCredentials: true }
     )
     setSingleIs(response.data)

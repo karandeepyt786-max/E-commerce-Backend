@@ -24,7 +24,7 @@ const Order = () => {
 
   const isLogInOut = async () => {
     try {
-      await axios.post("http://localhost:3000/user/isLoginOut", {}, { withCredentials: true }).then((data) => {
+      await axios.post("https://e-commerce-backend1-4xl3.onrender.com/user/isLoginOut", {}, { withCredentials: true }).then((data) => {
         let resposeuserdata = data.data.data
         dispatch(UserData({ Details: resposeuserdata }))
         console.log("responsedata is ", resposeuserdata.emailAddress)
@@ -48,7 +48,7 @@ const Order = () => {
 
     if (user[0]) {
       try {
-        const data = await axios.post("http://localhost:3000/user/OrderGetter", { Email: Email }, { withCredentials: true })
+        const data = await axios.post("https://e-commerce-backend1-4xl3.onrender.com/user/OrderGetter", { Email: Email }, { withCredentials: true })
         console.log("ordergetter data is ", data.data)
         setOrderData(data.data)
       }
@@ -71,11 +71,11 @@ const Order = () => {
   const OrderDelete=async(data)=>{
   
     console.log("delete order ",data.product._id)
-  const Orderdeleteis=  axios.post("http://localhost:3000/user/OrderDelete",{deleteOrderid:data.product._id,UserOrderEmail:userData[0].emailAddress},{withCredentials:true})
+  const Orderdeleteis=  axios.post("https://e-commerce-backend1-4xl3.onrender.com/user/OrderDelete",{deleteOrderid:data.product._id,UserOrderEmail:userData[0].emailAddress},{withCredentials:true})
   console.log("daleted response is the ",Orderdeleteis.data)
   }
 
-// http://localhost:3000/user/
+// https://e-commerce-backend1-4xl3.onrender.com/user/
 
   console.log("OrderData is ", OrderData)
 
@@ -89,7 +89,7 @@ const Order = () => {
             <div key={index} className='w-full max-w-[300px] bg-white rounded-3xl p-5 shadow-sm border border-gray-100 flex flex-col gap-4 hover:shadow-md transition-shadow relative'>
               <div className="w-full aspect-[4/3] overflow-hidden rounded-2xl bg-gray-50">
                 <img
-                  src={ite.product.ProductImage?.startsWith('http') ? ite.product.ProductImage : 'http://localhost:3000/Products/' + ite.product.ProductImage}
+                  src={ite.product.ProductImage?.startsWith('http') ? ite.product.ProductImage : 'https://e-commerce-backend1-4xl3.onrender.com/Products/' + ite.product.ProductImage}
                   className='w-full h-full object-cover'
                   alt={ite.product.ProductName}
                 />

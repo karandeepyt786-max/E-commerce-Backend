@@ -17,7 +17,7 @@ const Right = () => {
 
     const GetAllProducts = async (e) => {
         try {
-            const res = await axios.get(`http://localhost:3000/Admin/GetAllProducts/${Paramspage}/${e?.target?.value ? e.target.value : "latest"}`);
+            const res = await axios.get(`https://e-commerce-backend1-4xl3.onrender.com/Admin/GetAllProducts/${Paramspage}/${e?.target?.value ? e.target.value : "latest"}`);
             setproducts(res.data);
             
 
@@ -28,7 +28,7 @@ const Right = () => {
 
     const SortSubmit = async (e) => {
 
-        const response = await axios.post("http://localhost:3000/Admin/SortingProduct", { sortBy: e.target.value })
+        const response = await axios.post("https://e-commerce-backend1-4xl3.onrender.com/Admin/SortingProduct", { sortBy: e.target.value })
         set
         console.log("response for price is ", response.data)
         setproducts(response.data)

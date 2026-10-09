@@ -54,7 +54,7 @@ const CreateProduct = () => {
         ProductTags.forEach(t => formData.append("ProductTags", t));
 
         try {
-            const response = await axios.post("http://localhost:3000/Admin/CreateProduct", formData, {
+            const response = await axios.post("https://e-commerce-backend1-4xl3.onrender.com/Admin/CreateProduct", formData, {
                 withCredentials: true,
                 headers: {
                     "Content-Type": "multipart/form-data"

@@ -84,7 +84,7 @@ console.log("the product id is ",datas?.Data?.Productid )
         e.preventDefault()
         try {
             const Productid= datas?.Data?.Productid || props.Productid
-            const data = await axios.post("http://localhost:3000/user/Order", { UserAllInformation: UserAllInformation,ProductData:datas?.Data,Productid:Productid,Quantity:datas?.Data?.ProductQuantity }, { withCredentials: true })
+            const data = await axios.post("https://e-commerce-backend1-4xl3.onrender.com/user/Order", { UserAllInformation: UserAllInformation,ProductData:datas?.Data,Productid:Productid,Quantity:datas?.Data?.ProductQuantity }, { withCredentials: true })
             console.log("Add To Order ", data.data)
         }
         catch (err) {   
@@ -189,7 +189,7 @@ console.log("the product id is ",datas?.Data?.Productid )
                             <div className="flex items-center gap-4">
                                 <div className="w-20 h-24 bg-white rounded-2xl overflow-hidden shadow-sm border border-gray-100 flex-shrink-0">
                                     <img 
-                                      src={datas?.Data?.ProductImage?.startsWith('http') ? datas?.Data?.ProductImage : 'http://localhost:3000/Products/' + datas?.Data?.ProductImage} 
+                                      src={datas?.Data?.ProductImage?.startsWith('http') ? datas?.Data?.ProductImage : 'https://e-commerce-backend1-4xl3.onrender.com/Products/' + datas?.Data?.ProductImage} 
                                       className='w-full h-full object-cover' 
                                       alt="Product" 
                                     />

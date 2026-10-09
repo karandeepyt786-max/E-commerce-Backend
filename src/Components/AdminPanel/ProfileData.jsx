@@ -20,7 +20,7 @@ notify()
 
 const Logout=async()=>{
   try{
-await axios.post("http://localhost:3000/Admin/logout",{},{withCredentials:true}).then((data)=>{
+await axios.post("https://e-commerce-backend1-4xl3.onrender.com/Admin/logout",{},{withCredentials:true}).then((data)=>{
   console.log("logout data is ",data)
 }).catch((err)=>{
   console.log(err.message)
